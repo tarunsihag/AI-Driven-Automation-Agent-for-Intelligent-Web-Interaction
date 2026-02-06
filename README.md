@@ -2,6 +2,84 @@
 
 A Python-based autonomous web agent that explores Wikipedia by intelligently navigating through articles, making decisions based on page content, and logging its journey.
 
+## 🤖 Core Technologies
+
+### LLM Integration
+This project demonstrates **LLM-driven decision making** capabilities:
+- **Current Implementation**: Rule-based decision logic (mock LLM behavior)
+- **Architecture Ready**: Modular design allows seamless LLM integration via API
+- **LLM Simulation**: Decision engine mimics intelligent reasoning patterns
+- **API-Ready Structure**: Decision logic can be replaced with GPT/Claude API calls
+
+### Python Backend
+Built entirely with Python 3.12+ providing:
+- **Modular Architecture**: Clean separation of concerns across multiple modules
+- **Object-Oriented Design**: Classes for Agent, Decision Engine, and Logger
+- **Asynchronous Capabilities**: Ready for async API calls to LLM providers
+- **JSON-Based Communication**: Structured data flow suitable for REST APIs
+
+### Selenium Web Automation
+Full-featured browser automation using Selenium WebDriver:
+- **Chrome WebDriver**: Programmatic browser control
+- **JavaScript Execution**: Reliable element interaction
+- **Screenshot Capture**: Visual documentation of agent behavior
+- **Element Discovery**: Intelligent DOM traversal and filtering
+- **Robust Error Handling**: Graceful fallbacks for automation failures
+
+### REST-Style Architecture
+Designed with REST principles for future API integration:
+- **Stateless Operations**: Each decision is independent
+- **Structured Data Exchange**: JSON for inputs/outputs
+- **Clear Interfaces**: Well-defined contracts between components
+- **Modular Endpoints**: Easy to expose as REST API endpoints
+- **Scalable Design**: Ready for microservices architecture
+
+## 🚀 Future Scope: GPT / Claude Integration
+
+### Planned Enhancements
+
+**1. LLM-Powered Decision Making**
+- Replace rule-based logic with GPT-4 or Claude API calls
+- Natural language reasoning for each navigation decision
+- Context-aware exploration based on semantic understanding
+- Dynamic goal setting and task completion
+
+**2. Advanced Features**
+- **Vision API Integration**: Use GPT-4 Vision or Claude 3 to analyze page screenshots
+- **Multi-Agent Collaboration**: Multiple agents with different exploration strategies
+- **Conversational Interface**: Chat with the agent to guide its exploration
+- **Learning Capabilities**: Fine-tune models based on successful navigation patterns
+- **Content Summarization**: Extract and summarize key insights from visited pages
+
+**3. API-First Architecture**
+- RESTful endpoints for agent control
+- Webhook support for event notifications
+- Real-time WebSocket updates during exploration
+- OpenAPI/Swagger documentation
+- Authentication and rate limiting
+
+**4. Integration Possibilities**
+```python
+# Example: Future GPT Integration
+decision = await openai.ChatCompletion.create(
+    model="gpt-4",
+    messages=[{
+        "role": "system",
+        "content": "You are a web navigation agent..."
+    }, {
+        "role": "user", 
+        "content": f"Current page: {page_info}. What should I do next?"
+    }]
+)
+```
+
+**5. Enhanced Capabilities**
+- Multi-language support using LLM translation
+- Sentiment analysis of content
+- Fact extraction and knowledge graph building
+- Adaptive behavior based on user feedback
+- Integration with vector databases for semantic search
+
 ## 🏗️ Architecture
 
 ### System Overview
@@ -327,11 +405,19 @@ LOG_FILE = "agent_log.json"               # Log file name
 
 ## 🛠️ Technical Stack
 
-- **Language**: Python 3.12
-- **Browser Automation**: Selenium WebDriver
-- **Browser**: Google Chrome
-- **Data Format**: JSON for logs
+### Current Implementation
+- **Language**: Python 3.12+ (Backend)
+- **Browser Automation**: Selenium WebDriver (Chrome)
+- **Browser**: Google Chrome with ChromeDriver
+- **Data Format**: JSON for logs and data exchange
 - **Image Format**: PNG for screenshots
+- **Architecture**: Modular, REST-style design pattern
+
+### LLM Integration (Future-Ready)
+- **API Support**: Structured for OpenAI GPT or Anthropic Claude integration
+- **Decision Logic**: Mock LLM behavior with rule-based reasoning
+- **Async Ready**: Architecture supports async API calls
+- **Prompt Engineering**: Designed for natural language instruction
 
 ## 📝 Extending the Agent
 
